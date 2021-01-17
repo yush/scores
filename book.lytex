@@ -1,0 +1,9 @@
+\documentclass {book}
+
+\title{Guitar session 1}
+\begin{document}
+Echauffement araignée 1
+
+\lilypondfile {warmup/spider1.ly}
+
+\end{document}

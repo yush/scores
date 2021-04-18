@@ -37,8 +37,8 @@
 cmajor_posSixFour=\markup\scale-diagramm #'((6 8) (5 5) (5 7) (5 8) (4 5) (4 7) (4 9)
                                              (3 5) (3 7) (2 5) (2 6) (2 8) (1 5) (1 7) (1 8)) #7 #2.0
 
-cmajor_posFiveFour=\markup\scale-diagramm #'((6 15) (5 12) (5 14) (5 15) (4 12) (4 14) (3 12)
-                                              (3 14) (2 12) (2 13) (2 15) (1 12) (1 13) (1 15)) #7 #2.0
+cmajor_posFiveFour=\markup\scale-diagramm #'((5 15) (4 12) (4 14) (4 15) (3 12) (3 14) (2 12)
+                                             (2 13) (2 15) (1 12) (1 13) (1 15)) #7 #2.0
 
 cmajor_posSixTwo=\markup\scale-diagramm #'((6 8) (6 10) (5 7) (5 8) (5 10) (4 7) (4 9)
                                               (4 10) (3 7) (3 9) (3 10) (2 8) (2 10) (1 7) (1 8) ) #7 #2.0
@@ -99,10 +99,10 @@ global = {
   
   \score {
     <<
-      \new TabStaff \relative { c4 \mark "5-2" d e f g a b c d e f g a b r2 }
-      \set TabStaff.minimumFret = 2
+      \new TabStaff \relative { c4 \mark "5-2" d e f g a b c\3 d e f g a b r2 }
+      \set TabStaff.minimumFret = 1
       \set TabStaff.restrainOpenStrings = ##t
-      \relative {c'4^\cmajor_posFiveTwo d e f g a b c d e f-1 g a b c r}
+      \relative {c'4^\cmajor_posFiveTwo d e f g a b c d e f-1 g a b r2}
     >>
     \layout { }
   }
@@ -119,10 +119,10 @@ global = {
   
   \score {
     <<
-      \new TabStaff \relative { c4 \mark "5-1" d e f g a b c d\mark "D a voir" e f g a b c2 }
+      \new TabStaff \relative { c4 \mark "5-1" d e f g a b c d e f g a b r2 }
       \set TabStaff.minimumFret = 3
       \set TabStaff.restrainOpenStrings = ##t
-      \relative {c'4^\cmajor_posFiveOne d e f g a b c d e f-1 g a b c r}
+      \relative {c'4^\cmajor_posFiveOne d e f g a b c d e f-1 g a b r2}
     >>
     \layout { }
   }

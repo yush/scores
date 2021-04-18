@@ -1,10 +1,12 @@
-\new TabStaff \relative c {
-  \set TabStaff.minimumFret = #3
-  \set TabStaff.restrainOpenStrings = ##t
-  g gis a ais
-  c cis d dis
-  f fis g gis
-  ais b c cis
-  d dis e f
-  g gis a ais
+\score {
+  \new TabStaff \relative c {
+    \set TabStaff.minimumFret = #5
+    \set TabStaff.restrainOpenStrings = ##t
+    a ais b bis
+    d dis e eis
+    g gis a ais
+    bis cis d dis
+    e eis fis g
+    a ais b bis
+  }
 }

@@ -1,11 +1,12 @@
 \version "2.22.0"
+\include "articulate.ly"
 
 global = {
   \key c \major
   \time 4/4
 }
 
-electricBass = \relative c {
+bassLine = \relative c {
   \global
   % En avant la musique !
     \time 4/4
@@ -19,17 +20,20 @@ electricBass = \relative c {
     {c4 d ees f}    
 }
 
+intro  = {\bassLine}
+verse = {\repeat volta 2 {\bassLine}}
 
+song = {\intro \verse}
 
 \score {
   \new Staff \with {
     midiInstrument = "electric bass (finger)"
     instrumentName = "Basse électrique"
-  } { \clef "bass_8" \electricBass }
+  } { \clef "bass_8" \song }
   \layout { }
 }
 \score {
-  \unfoldRepeats \electricBass
+  \unfoldRepeats \song
   \midi {
     \tempo 4=80
   }

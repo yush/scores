@@ -12,7 +12,7 @@ global = {
 
 % BASS
 bassLineIntro = \relative c {
-  {aes1 ges aes ges ges}
+  {aes1 ees aes ees ees}
 }
 
 bassLineChorus = \relative c {
@@ -20,6 +20,10 @@ bassLineChorus = \relative c {
   des16 des des bes des4
   ees16 ees ees des ees4
   ees16 ees ees des ees4
+}
+
+bassBridge = \relative c {
+  aes2 ges f1
 }
 
 % GUITAR
@@ -42,7 +46,7 @@ guitarChorus = \relative c {
   
 }
 
-guitarBridge = relateve c {
+guitarBridge = \relative c {
   des8 aes4. b8 ges4.
   aes8 des4. r2  
 }
@@ -51,25 +55,32 @@ intro  = {\bassLineIntro}
 chorus = {\guitarIntroWithBass}
 
 song = {
+%  <<
+%    \new Staff \with {
+%      midiInstrument = "acoustic grand"
+%      instrumentName = "guitar"
+%    } 
+%    {
+%      \voiceOne
+%      \repeat volta 10 \guitarIntroOnly
+%      \chorus     
+%    >>  
   <<
     \new Staff \with {
       midiInstrument = "acoustic grand"
-      instrumentName = "guitar"
-    } 
-    {
-      \voiceOne
-      \repeat volta 4 \guitarIntroOnly
-      \chorus 
-    }
-    \new Staff \with {
-      midiInstrument = "electric bass (pick)"
       instrumentName = "bass"
     } { 
       \clef "bass" 
       \voiceTwo
-      \repeat volta 4 {r1 r}
+      \mark \markup {"6x"} \repeat volta 6 {r1 r}
       \bassLineIntro
-      \bassLineChorus
+      \mark \markup {"8x"}\repeat volta 8 \bassLineChorus
+      \repeat volta 2 \bassBridge
+      \mark \markup {"8x"}\repeat volta 8 \bassLineChorus
+      \bassLineIntro
+      \mark \markup {"14x"} \repeat volta 14 \bassLineChorus
+      \mark \markup {"4x"} \repeat volta 4 \bassBridge
+      \mark \markup {"10x"} \repeat volta 10 \bassLineChorus
     }
   >>
 

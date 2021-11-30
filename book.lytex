@@ -6,4 +6,9 @@ Echauffement araignée 1
 
 \lilypondfile {warmup/spider1.ly}
 
+Gammes
+
+Position 2
+\lilypondfile {scales/CMajorPosII.ly}
+
 \end{document}

@@ -2,10 +2,15 @@
 \header {
   title = "Creep"
 }
+<<<<<<< HEAD
 
 verse = \new Staff{
     \tempo 4 = 90 
     \relative {
+=======
+verseGuitar = \new Staff{
+  \relative {
+>>>>>>> f469b903552b55e769a1a6adcbf5466c7f98aaf2
     \time 4/4
     {g8 d' g d g b4 g8 }
     {d' b g b4 d8 b4  }
@@ -18,13 +23,33 @@ verse = \new Staff{
   }
 }
 
+<<<<<<< HEAD
 song = \repeat volta 3 { \verse }
 \score {  
   \song
+=======
+verseBass = \new Staff{
+  \relative {
+    \time 4/4
+    {g4 g8~g16 g16 g8 g4 g8}
+    {g4~g8~g16 g16 g8 g8~g4} 
+  }
+}
+
+songGuitar = \repeat volta 2 { \verseGuitar }
+songBass = { \verseBass }
+
+\score {
+  \songBass
+>>>>>>> f469b903552b55e769a1a6adcbf5466c7f98aaf2
   \layout {}
 }
 
 \score {
+<<<<<<< HEAD
   \unfoldRepeats \song 
+=======
+  \unfoldRepeats \songBass
+>>>>>>> f469b903552b55e769a1a6adcbf5466c7f98aaf2
   \midi {}
 }

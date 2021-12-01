@@ -1,4 +1,6 @@
+.vscode
 _tmp
 /songs/*.pdf
 *.mid
+*.midi
 *.pdf
